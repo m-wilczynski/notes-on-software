@@ -35,6 +35,10 @@ Generally my preferred way is by publishing events since it the most decoupled w
 - **backups are tricky** - you published some data and then you are rolling back because "business says so" - what about the data that have been processed by subscribers already?
 - **events need to be versioned and idempotently processed** - there is really no other way round; most messaging brokers will retry messages when something goes wrong (google: *Fallacies of distributed computing*)
 
+#### Separate databases - missing parts
+- **identifier strategies** - GUIDs vs sequentional ids vs natural keys; GUID seems natural for distributed but would need some sort of sequentionallity for indexing, something like [flake](https://github.com/boundary/flake) and its .NET implementation [NewId](https://github.com/phatboyg/NewId)
+- **dealing with transactions** - R. Roger proposes pattern from Rotem-Gal-Oz's *SOA Patterns*, ie. to use reservations (and commiting or canceling them locally); of course provided we forget about distributed transactions on SQL level (since we're isolating databases on app level)
+
 #### Inspirations
 * Richard Roger, *The Tao of Microservices*
 * Martin Kleppman, *Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems*
