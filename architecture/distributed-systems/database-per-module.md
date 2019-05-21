@@ -1,3 +1,4 @@
+[Distributed systems](/architecture/distributed-systems)
 # Database per module
 
 Concept that generally came from microservices land but can (and probably should) be adopted into general distributed systems architecture. Seems I'm more eager to accept separate database per group of services realizing concrete business process (or tightly coupled group of them), let's call it *database per module*.
@@ -25,13 +26,13 @@ If you decide to isolate yourself on module (application) level, you'll still fi
 - publish events on changes from application that owns data and project it in your database in a scope you need it
 - requesting data via public interfaces, on demand; mostly through web services
 
-Generally my preferred way is by publishing events since it the most decoupled way you can go but it has several challenges that need to be addressed, ie: 
+Generally my preferred way is by publishing events since it the most decoupled way you can go (subscriber can even be offline when event is published). However, such approach has several challenges that need to be addressed, ie: 
 - **eventual consistency** - data won't be actual all the time
 - **data can lose integrity** - there are no FKs in here; also could cause some conflicts on events like deleting/archiving some business entity
 - **changes in events structure** need to be address somehow if they don't match
 - **maintenance cost is huge** - you are now maintaining several databases, messaging broker and applications communicating with it
 - **needs even more extensive monitoring and logging** - common pitfall of anything distributed
-- **backups are tricky** - you published some data and then you are rolling back because "business says so" - what about the data that have been processed by subscribes already?
+- **backups are tricky** - you published some data and then you are rolling back because "business says so" - what about the data that have been processed by subscribers already?
 - **events need to be versioned and idempotently processed** - there is really no other way round; most messaging brokers will retry messages when something goes wrong (google: *Fallacies of distributed computing*)
 
 #### Inspirations
