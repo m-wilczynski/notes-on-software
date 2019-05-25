@@ -1,6 +1,8 @@
 [Angular](/frameworks-and-libraries/angular)
 # Combining promises with observables
 
+#### Context
+
 Recently I've stumble upon a problem in combining `Promise` and `Observable` in Angular code.
 It's not an Angular problem per se (or not even TypeScript problem) but general RxJs and ES6 promises combination.
 
@@ -10,9 +12,10 @@ Case description:
 - after object is built, we call its function that represents an async operation but returns `Promise`
 - finally we need to do something with result of the `Promise` and project result to observer
 
-What we need to do is combine `pipe` with converting `Promise` to `Observable` using `from` and flattening `Observable<Observable<T>>` with `flatMap`;
+#### Solution
 
-Code:
+What we need to do is combine `pipe` with converting `Promise` to `Observable` using `from` and flattening `Observable<Observable<T>>` with `flatMap`:
+
 ```typescript
 getResultFromExternalLib() : Observable<Result> { 
 
