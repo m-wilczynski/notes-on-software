@@ -16,3 +16,6 @@ Such error will be repeated multiple times for many dependencies stating exactly
 #### Solution:
 
 Use package references everywhere (in this case, also for Service project). No other solutions so far.
+
+#### References:
+- Similiar case: https://github.com/NuGet/Home/issues/5483

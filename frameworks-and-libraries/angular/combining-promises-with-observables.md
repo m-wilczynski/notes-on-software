@@ -28,3 +28,6 @@ getResultFromExternalLib() : Observable<Result> {
 }
 
 ```
+
+#### References
+- https://www.learnrxjs.io/operators/transformation/mergemap.html
