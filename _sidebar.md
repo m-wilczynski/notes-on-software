@@ -8,6 +8,10 @@
     * [Typescript](/languages/typescript)
     * [SQL](/languages/sql)
     * [Go](/languages/go)
+* Frameworks and libraries
+    * [Angular](/frameworks-and-libraries/angular)
+    * [ASP.NET Core](/frameworks-and-libraries/aspnet-core)
+    * [MassTransit](/frameworks-and-libraries/masstransit)
 * Software engineering
     * [Testing](/engineering/testing)
 * Standalone software
