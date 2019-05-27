@@ -2,6 +2,8 @@
 
 You're currently browsing my notes on software that I've decided to write down. 📝
 
+You'll find here notes spanning from very basic or obvious things to complex, analytic articles.
+
 Why, you'd ask? Well... memory is tricky and there are many things understood either through experience, books, tutorials, blogposts, conferences or simple chit-chat that I want to remember.
 
 Lots of people decide to start a blog for this particular reason but I used to have one and wasted way too much time for:
