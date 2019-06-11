@@ -14,8 +14,9 @@ There are three main concepts in Courier:
 
 #### Execution flow
 
+![Execution flow](https://raw.githubusercontent.com/m-wilczynski/notes-on-software/master/frameworks-and-libraries/masstransit/Courier-Execute.png)
 
 
 #### Compensation flow
 
-
+![Compensation flow](https://raw.githubusercontent.com/m-wilczynski/notes-on-software/master/frameworks-and-libraries/masstransit/Courier-Compensate.png)
