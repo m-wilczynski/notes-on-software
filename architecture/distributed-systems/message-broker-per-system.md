@@ -17,6 +17,6 @@ But sometimes you'd like to have seperate instance of your broker per system or 
 
 
 And some diagram for summarizing my approach (my broker of choice here is RabbitMQ):
-
+![Diagram](https://raw.githubusercontent.com/m-wilczynski/notes-on-software/master/architecture/distributed-systems/message-broker-per-system.png)
 
 
