@@ -1,12 +1,10 @@
-[Csharp](/languages/sql)
-# T-SQL Cheatsheet
-
-Recently I've been brushing up my T-SQL knowledge beyond basic DQL, DML and DDL from various sources (mostly books and web articles).
-In the end, I've decided it would be easier to go back to one, unified note on things I need to recall too frequently.
+[SQL](/languages/sql)
+# T-SQL DQL Cheatsheet
 
 You can find here both super obvious and less used functions - it's quite subjective. I tried to note down those that I would use less often - those that are more prone to be forgotten.
 
-### DQL (Data Query Language)
+#### Table of contents
+- [LIKE operators](/languages/sql/tsql-dql-cheatsheet?id=like-operators)
 
 #### `LIKE` operators
 

@@ -1,4 +1,4 @@
 # SQL
 
 #### Contents:
-- [T-SQL Cheatsheet](/languages/sql/tsql-cheatsheet)
+- [T-SQL DQL Cheatsheet](/languages/sql/tsql-dql-cheatsheet)
