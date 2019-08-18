@@ -12,6 +12,7 @@ But sometimes you'd like to have seperate instance of your broker per system or 
 
 **Here are some rules I've wrote down for working with such approach for event-driven architecture:**
 - publisher should be dummy when it comes to routing - publishing only to broker inside its system boundry
+  - this approach makes it easier for publishing events; if we had multiple brokers to publish to, we would have to know location of all of our subscribers (which would lead to high coupling) and to ensure all publishes were confirmed to complete operation (which is more prone to errors then publishing to single broker)  
 - dev and ops in charge of particular publisher should be interested on how fast (and whether succesfully) events they are publishing are processed
 - subsribers should generally have idea on which broker interesting message will appear; that's where they should subsribe
 
