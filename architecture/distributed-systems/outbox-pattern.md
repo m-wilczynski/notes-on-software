@@ -103,7 +103,8 @@ Another solution is to introduce **Outbox** pattern and:
 
 Such approach would look - from high level perspective - like that:
 
--- insert here image --
+
+![Diagram](https://raw.githubusercontent.com/m-wilczynski/notes-on-software/master/architecture/distributed-systems/outbox-pattern.png)
 
 And it's storage might be:
 
