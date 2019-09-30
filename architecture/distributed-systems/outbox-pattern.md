@@ -8,7 +8,7 @@ As always, use of brokers (such as RabbitMQ) comes with a tradeoffs and there ar
 One of them is ensuring atomicity of publishing a message to the broker and its consistency with business transaction commited to database. As messages brokers in general cannot participate in database transactions (with exceptions like NServiceBus' approach with MSDTC), we need to somehow ensure that:
 - if business operation fails, we we'll neither commit it to database, nor will we publish any messages related to it
 - if business operation succeeds and message publish succeeds but transaction commit fails, we'll discard everything
-- if business operation succeed but message publish fails, transaction will be rolled back
+- if business operation succeeds but message publish fails, transaction will be rolled back
 
 #### Example
 
@@ -49,11 +49,13 @@ public class MyOperationCommandHandler : ICommandHandler<MyOperationCommand>
                     //let's assume there could only be one for simplicity (with many it even gets trickier)
                     if (modelToOperateOn.DomainEvents.Any())
                     {
-                        _publishEndpoint.Publish(modelToOperateOn.DomainEvents.First());
+                        await _publishEndpoint.Publish(modelToOperateOn.DomainEvents.First());
                     }
 
                     //5. Everything went smoothly, commit!
                     transaction.Commit();
+
+                    return Result.Ok();
                 }
                 //Something went wrong...
                 catch (Exception ex)
@@ -63,6 +65,8 @@ public class MyOperationCommandHandler : ICommandHandler<MyOperationCommand>
 
                     //7. Rollback transaction
                     transaction?.Rollback();
+
+                    return Result.Failed();
                 }
             }
         }
@@ -114,8 +118,8 @@ And it's storage might be:
 
 Finally, we might decide to remove event when it was published succesfully or keep dates of occurence and publish (as Kamil suggests - see link below).
 
-Of course such approach comes with same guarantee as RabbitMQ itself - at least one delivery.
-We must make sure that when messages get delivered twice, it's processing is idempotent`.
+In the end, outbox pattern comes with same guarantee as RabbitMQ itself - at least one delivery.
+We must make sure that when messages get delivered twice, it's processing is idempotent.
 
 #### Inspirations
 * Chris Richardson, *https://microservices.io/patterns/data/transactional-outbox.html*
