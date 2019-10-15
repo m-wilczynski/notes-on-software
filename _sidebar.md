@@ -14,6 +14,7 @@
     * [MassTransit](/frameworks-and-libraries/masstransit)
 * Software engineering
     * [Testing](/engineering/testing)
+    * [Computer networks](/engineering/computer-networks)
 * Standalone software
     * [SQL Server](standalone-software/sql-server)
     * [RabbitMQ](standalone-software/rabbitmq)
