@@ -15,7 +15,7 @@ Since I'm using lots of ASP.NET Core now (with `AddHttpClient`), it's a little m
 
 Let's browse .NET Core sourcecode on GitHub, `System.Net.Http` assembly to be specific: https://github.com/dotnet/corefx/tree/master/src/System.Net.Http/src
 
-As `HttpClient` construction path used with `AddHttpClient` (along with all the builders and factories on the way...) sets proxy on by default in `HttpClientHandler` on Windows (see: `HttpClientHandler.Windows.cs`), we're going this route:
+As `HttpClient` construction path used with `AddHttpClient` (along with all the builders and factories on the way...) uses default `HttpClientHandler` ctor on Windows (see: `HttpClientHandler.Windows.cs`), we're investigating this route:
 ```csharp
 private HttpClientHandler(bool useSocketsHttpHandler) // used by parameterless ctor and as hook for testing
 {
@@ -55,8 +55,12 @@ private HttpClientHandler(bool useSocketsHttpHandler) // used by parameterless c
 }
 ```
 
-If we consider that corporate proxies often use user credentials, wheras `HttpClientHandler` sets (obviously) none, we can end up with quite undefined behaviour in the end. There might be another 'why?' you'd ask.
-Well, mostly because if you're proxy/firewall is slow, ASP.NET Core 2.X will end up returning code 502.3 (Bad Gateway) instead of 504 (Gateway Timeout). And you start to troubleshoot... :)
+As we can see, proxy is on by default, along with all the fancy stuff in "Internet options" from Internet Exploder (pun intended).
+
+If we consider that corporate proxies often use credentials, wheras `HttpClientHandler` sets (obviously) none, we can end up with quite undefined behaviour in the end. There might be another 'why?' you'd ask.
+Well, mostly because if your proxy/firewall is slow on figuring it out who you are and what address (probably unknown since it's internal) you're trying to reach, ASP.NET Core 2.X will end up returning code 502.3 - Bad Gateway (see: https://github.com/aspnet/AspNetCoreModule/issues/48).
+
+And since it's 502 and not 504 (Gateway Timeout) you start to investigate in very different direction and all the fun begins... :)
 
 #### Solution
 
@@ -75,3 +79,10 @@ public void ConfigureServices(IServiceCollection services)
         });
 }
 ```
+
+And that's it.
+
+#### References
+
+*ASP.NET Core docs* - https://docs.microsoft.com/en-us/aspnet/core/fundamentals/http-requests?view=aspnetcore-3.0
+*.NET Core GitHub* - https://github.com/dotnet/corefx
