@@ -18,3 +18,6 @@
 * Standalone software
     * [SQL Server](standalone-software/sql-server)
     * [RabbitMQ](standalone-software/rabbitmq)
+* Tooling and environment
+    * [General](/tooling/general)
+    * [Visual Studio](/tooling/visual-studio)
