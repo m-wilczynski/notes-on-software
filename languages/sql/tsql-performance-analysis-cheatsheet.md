@@ -8,7 +8,7 @@ Cheatsheet for analysing performance on SQL Server.
 - [Inspecting query cache](/languages/sql/tsql-performance-analysis-cheatsheet?id=inspecting-query-cache)
 
 
-#### Lock analysis
+### Lock analysis
 
 ```sql
 SELECT 
@@ -20,7 +20,7 @@ SELECT
 FROM sys.dm_tran_locks;
 ```
 
-#### Inspecting query cache
+### Inspecting query cache
 
 ```sql
 SELECT 
