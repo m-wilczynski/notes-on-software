@@ -12,6 +12,7 @@
     * [Angular](/frameworks-and-libraries/angular)
     * [ASP.NET Core](/frameworks-and-libraries/aspnet-core)
     * [MassTransit](/frameworks-and-libraries/masstransit)
+    * [D3.js](/frameworks-and-libraries/d3js)
 * Software engineering
     * [Testing](/engineering/testing)
     * [Computer networks](/engineering/computer-networks)
