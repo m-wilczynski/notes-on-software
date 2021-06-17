@@ -1,0 +1,37 @@
+# Backlog
+
+|Priority (L/M/H)|Topic          |Category       |Effort (L/M/H)|Collected notes|
+------------- |-------------| ---- | --- | --- 
+H|Merge 'Languages' and 'Frameworks' sections| - |M| - 
+L|WCF connection patterns|Languages/C#|M|`Dispose` vs `Close`+`Abort`, proper use `ChannelFactory<T>`, caching (what and why)
+L|SCIM2|Architecture/General|L|SCIM2 is an API open standard for cross domain identity management
+PIM/PAM|Architecture/General|Class of solutions that manage elevated permission accounts and their sessions (ie. admins, super-users and so on)
+M|CMM|Architecture/General|M|*Capability Maturity Model* - development model for assessing how mature particular processes are in certain organization/department/project; this can span from things like DevOps maturity, cloud-readiness, quality gates, code-review, self-organisation etc; measurement ("scoring") spans from 1 (Initial) to 5 (Effective)
+H|SQL Server locking debugging|Languages/SQL|L|Expand current *T-SQL Performance Analysis Cheatsheet* with `sp_lock` and `sp_who` + SPID
+M|XAdES|Engineering/Security|H|XML signing - expand on how it actually works "underneath"; used for **qualified electronic signature** (recommended by UE and MSWiA in Poland)
+H|SQL Server - `UPDLOCK` vs `SERIALIZABLE`|Languages/SQL|M|`UPDLOCK` hint can be used instead of `SERIALIZABLE` isolation level to prevent duplicates `INSERT` in (`SELECT` then `INSERT` scenario); it can gracefully force other sessions (that also use this hint) to wait for their "chance" to SELECT without ending up with deadlocks (as in `SERIALIZABLE` case)
+M|SQL Server - lock compatibility matrix|Languages/SQL|M|Describe compatibility matrix between Shared (S), Exclusive (X), Update (U) and all the Intent types (I...)
+M|SQL Server - `RoundTimeDown`|Languages/SQL|L|Describe creating time buckets in SQL Server with `RoundTimeDown`; quite handing for reporting and all time series oriented data in SQL Server
+M|OpenTelemetry|Architecture/General|H|Describe OpenTelemetry - it's goals, current state and usage; from their page it `is a collection of tools, APIs, and SDKs. You can use it to instrument, generate, collect, and export telemetry data (metrics, logs, and traces) for analysis in order to understand your software's performance and behavior.`
+M|Microfrontends|Architecture/Distributed|H|Describe Microfrontends as a general approach to decomposing monolithic frontends and as a final step in *vertical slices* approach to succeed
+L|Webpack Module Federation vs single-spa|Languages/JavaScript|H|Describe differences between these two approaches and how they can be used to achieve microfrontends when needed
+M|TailwindCSS|Languages/CSS|H|TailwindCSS has been gathering large popularity for a long time already; investigate and write down in your words how it works and "why the hype"
+L|StencilJS|Languages/JS|H|StencilJS has been recommended in many places as a go-to solution for Web Components (and building design systems with them); investigate and write down how in general it works
+L|RBAC,ABAC,ACL|Architecture/General|M|Briefly desribe RBAC, ABAC (RBAC + attributes) and RBAC (business role - create, write, enslist, pay etc.) vs ACL (technical - has or has not access to resource)
+M|Marshalling|Engineering/Distributed computing|M|Briefly desribe definition of marshalling and find few examples of it like RPC/REST (with JSON/XML/MessagePack etc.), COM etc; compare with serialization
+H|Linux commands cheatsheet|Languages/Linux commands|M|Describe commonly used Linux commands, especially `find`, `grep`, `sed`, `awk`, `cat`, `touch`, `mkdir`, `ls`, `virtualenv` and others
+M|x86 assembly basics|Languages/Assembly|H|"Serialize" notes from reading ***C.O.D.E.***; note down popular x86 opcodes to be not so ignorant when reading x86 ASM files
+H|How computer works? - high level|Engineering/Computer Science|H|Create simple cheatsheet (with diagrams) on how computer architecture works, ie. CPU (ALU, registers and L1, L2, L3 cache), memory, disc, bus speed and ideas/problems around it, ie. cache misses, branch prediction, register spilling (moving to RAM) etc.
+L|Shift left|Architecture/General|L|"Shift left" is an organisation approach to security, that encourages security review as early in development process as possible (so "left" means literally left on time axis given software development lifetime)
+L|Sonar vs Fortify|Standalone software/CICD|H|Both tools are used for static code analysis; Sonar is used for for code quality analysis (and measuring technological debt), whereas Fortify is used for code security analysis; compare how they can be used together in CI/CD pipeline
+H|Certificates in PKCS|Engineering/Security|H|Describe what role certificates play in Public Key Cryptography Standards (PKCS) infrastructure; describe what thumbrint (hashed certificate), signature, CA (Certificate Authority) and trust chain is; throwing in few words about asymmetric cryptography wouldn't hurt
+M|Array pooling with `ArrayPool<T>`|Languages/C#|M|*Array pooling* is a concept of initializing large array beforehand (if we anticipate that we will be allocating large arrays and do it a lot) and then renting chunks from it when we need them; if we keep renting from once preallocated pool, we do not end up with lots large arrays on LOH (Large Object Heap), that can later on cause forced managed heap collection (which hurts performance a lot); `ArrayPool<T>` offers pooling and renting (with `ArrayPool<T>.Rent`) functionality in .NET and is thread-safe; Adam Sitnik has amazing post about it on https://adamsitnik.com/Array-Pool/
+H|Small Object Heap (G0, G1, G2) and Large Object Heap|Languages/C#|H|Write down general mechanism behind .NET Garbage Collection, SOH (and its generations) and LOH; include topics like LOH compacting, memory fragmentation problem, when object lands on LOH and general LOH problems; definitely approach with Konrad Kokosa's book accompanying you
+L|tcpdump on Linux|Engineering/Computer networks|M|Describe usage of tcpdump - network sniffer for Linux; could be worth comparing it briefly with Wireshark
+L|TLS termination|Engineering/Computer networks|M|Describe TLS/SSL termination - how it works, why we do this (performance, network appliance, package analysis etc.)
+L|FQDN vs hostname|Engineering/Computer networks|L|Hostname could be FQDN if it goes up to the top-level domain
+M|Load balancing - L4 vs L7|Engineering/Computer networks|H|Describe how load balancing is implemented nowadays, especially comparing layer 4 and layer 7 balancing; if it ends up as not a technical but more general note, move to Architecture/Distributed
+M|HAProxy|Standalone software|M|Play around with HAProxy and note some general concepts behind how it works
+H|async-await vs locking|Languages/C#|M|Write down approaches to using async-await with locking (mainly `SemaphoreSlim`, but could also hackaround your way with simple bit flag and `Interlocked.CompareExchange`)
+M|Raft algorithm|Engineering/Distributed computing|H|Describe Raft algorithm and how it achieves cluster consensus with distributed log, leader election etc; note actual uses in solutions like Neo4j (+ONgDB) or RabbitMQ (with quorum queues)
+L|Byzantine generals problem (Byzantine fault)|Engineering/Computer science|M|Describe Byzantine fault problem and how it affects distributed computing systems

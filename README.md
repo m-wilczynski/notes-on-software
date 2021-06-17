@@ -19,10 +19,12 @@ Why did I choose this form then? Simply:
 * I caught myself on losing lots of knowledge gathered from sources mentioned above and started to email myself with notes (which is fine but hard to organize)
 
 Still interested? Then these are general categories on which I generally have something to note on:
-* **Software architecture** - *high level, not so much code*
+* **Software architecture** - *high level (architecture, system design, general software development practices), not so much code*
 * **Software engineering** - *software testing, design patterns, business modeling, programming models and concepts*
 * **Programming languages** - *code snippets in particular language*
 * **Frameworks and libraries** - *code snippets in particular framework or library*
 * **Standalone software** - *things that don't fit in frameworks and languages, ie. databases, messaging brokers etc.*
+* **Tooling** - *tooling, shortcuts etc.*
+* **Soft skills** - *soft skills, leadership and also self-development*
 
 Use navigation or search bar on the left to discover. Just don't expect too much. 📚
