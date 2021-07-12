@@ -5,7 +5,7 @@
 H|Merge 'Languages' and 'Frameworks' sections| - |M| - 
 L|WCF connection patterns|Languages/C#|M|`Dispose` vs `Close`+`Abort`, proper use `ChannelFactory<T>`, caching (what and why)
 L|SCIM2|Architecture/General|L|SCIM2 is an API open standard for cross domain identity management
-L|PIM/PAM|Architecture/General|Class of solutions that manage elevated permission accounts and their sessions (ie. admins, super-users and so on)
+L|PIM/PAM|Architecture/General|M|Class of solutions that manage elevated permission accounts and their sessions (ie. admins, super-users and so on)
 M|CMM|Architecture/General|M|*Capability Maturity Model* - development model for assessing how mature particular processes are in certain organization/department/project; this can span from things like DevOps maturity, cloud-readiness, quality gates, code-review, self-organisation etc; measurement ("scoring") spans from 1 (Initial) to 5 (Effective)
 H|SQL Server locking debugging|Languages/SQL|L|Expand current *T-SQL Performance Analysis Cheatsheet* with `sp_lock` and `sp_who` + SPID
 M|XAdES|Engineering/Security|H|XML signing - expand on how it actually works "underneath"; used for **qualified electronic signature** (recommended by UE and MSWiA in Poland)
