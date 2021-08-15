@@ -20,7 +20,7 @@ Why did I choose this form then? Simply:
 
 Still interested? Then these are general categories on which I generally have something to note on:
 * **Software architecture** - *high level design and practices (architecture, system design, general software development practices, analysis and modelling), not so much code*
-* **Software engineering** - *low level design and practices - software testing, design patterns, programming models and concepts, computer science, infrastructure, networking, security; code agnostic*
+* **Software engineering** - *low level design and practices - software testing, design patterns, programming models and concepts, computer science, infrastructure, networking, security; language agnostic*
 * **Programming languages** - *code snippets in particular language*
 * **Frameworks and libraries** - //will merge with Languages// *code snippets in particular framework or library*
 * **Tooling** - *tooling, shortcuts etc.*
