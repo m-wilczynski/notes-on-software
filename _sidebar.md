@@ -16,9 +16,7 @@
 * Software engineering
     * [Testing](/engineering/testing)
     * [Computer networks](/engineering/computer-networks)
-* Standalone software
-    * [SQL Server](standalone-software/sql-server)
-    * [RabbitMQ](standalone-software/rabbitmq)
+    * [Databases](/engineering/databases)
 * Tooling and environment
     * [General](/tooling/general)
     * [Visual Studio](/tooling/visual-studio)
