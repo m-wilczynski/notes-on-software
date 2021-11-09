@@ -17,6 +17,7 @@
     * [Testing](/engineering/testing)
     * [Computer networks](/engineering/computer-networks)
     * [Databases](/engineering/databases)
+    * [Operating systems](/engineering/operating-systems)
 * Tooling and environment
     * [General](/tooling/general)
     * [Visual Studio](/tooling/visual-studio)
