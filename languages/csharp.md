@@ -6,3 +6,4 @@
 - [HttpClient - proxy](/languages/csharp/httpclient-proxy)
 - [Local NuGet server](/languages/csharp/local-nuget-server)
 - [Enum breaking changes](/languages/csharp/enum-breaking-changes)
+- [Parallel async-await with degree of parallelism (throttling)](/languages/csharp/parallel-async-await-with-dop)
