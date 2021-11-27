@@ -83,6 +83,8 @@ This in fact should actually be handled on business level with some sort of fall
 
 What's most important is that we would not suffer from neither serialization exceptions nor garbage or unknown integers flying around anymore.
 
+> ⚠️ `Enum.IsDefined()` will throw `ArgumentException` when given nullable enum type as first parameter!
+
 ### Bonus - publisher-driven contracts
 
 As a bonus, if you're using publisher-driven contracts (which is most of the cases for services having more than one consumer), you can actually add approach mentioned above to your response contracts.
