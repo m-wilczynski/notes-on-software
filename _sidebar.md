@@ -18,6 +18,7 @@
     * [Computer networks](/engineering/computer-networks)
     * [Databases](/engineering/databases)
     * [Operating systems](/engineering/operating-systems)
+    * [Computer science](/engineering/computer-science)
 * Tooling and environment
     * [General](/tooling/general)
     * [Visual Studio](/tooling/visual-studio)
