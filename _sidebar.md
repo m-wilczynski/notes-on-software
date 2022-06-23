@@ -22,5 +22,7 @@
 * Tooling and environment
     * [General](/tooling/general)
     * [Visual Studio](/tooling/visual-studio)
+* Soft skills
+    * [Book notes](/soft-skills/book-notes)
 * Backlog
     * [Current backlog](/backlog/backlog)
