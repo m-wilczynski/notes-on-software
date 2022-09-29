@@ -33,7 +33,12 @@ var entitiesTasks = entities.Select(async entity =>
 await Task.WhenAll(entitiesTasks);
 ```
 
-This however produces another problem: we now have 1000 `Task` that will be enqueued to `ThreadPool`. This will easily end up as a thread pool starvation, since we do not throttle tasks in any way.
+This however produces another problem: we now have 1000 `Task` that will be enqueued to `ThreadPool`. This might result in few scenarios:
+- (more likely) **endpoint** we're trying to call **will either get overwhelmed** by all of those requests at once or will reject some of them due to some internal policies, anti-DDoS or any backpressure mechanics; for other I/O operations we could run into similiar issues, saturating connection pool to SQL database or disk I/O when calling filesystem
+- (less likely) we might experience **thread pool starvation**, where it gets flooded by those 1000 (or more) `Task`s and features in application that are also async are **waiting for their time to resume** with continuation (ie. any job to do after Task completes)
+
+A good article about thread pool starvation form Visual Studio team:
+https://github.com/microsoft/vs-threading/blob/main/doc/threadpool_starvation.md
 
 ### Parallel solution with degree of parallelism
 
